@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./fail.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300&family=Roboto+Slab:wght@200;300;400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper-container">
+            <a href="#" class="brand-logo">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="logo">
+            </a>
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="logged-in" style="display: none;">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-account" type="button"
+                onclick="document.getElementById('modal-account').style.display='flex'">account</a>
+            </li>
+
+            <li class="logged-in" style="display: none;">
+                <a href="#" class="grey-text" id="logout">logout</a>
+            </li>
+            <!-- <li class="logged-in" style="display: none;">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-create">create account</a>
+            </li> -->
+            <li class="logged-out" style="display: none;">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-login" type="button"
+                    onclick="document.getElementById('modal-login').style.display='flex'">login</a>
+            </li>
+            <li class="logged-out" style="display: none;">
+                <a href="#" class="grey-text modal-trigger" data-target="modal-signup" type="button"
+                onclick="document.getElementById('modal-signup').style.display='flex'" >signup</a>
+            </li>
+
+        </ul>
+        </div>
+    </nav>
+    <!-- signup modal -->
+    <div class="modal" id="modal-signup">
+        <div class="hider"></div>
+        <div class="modal-signup-content">
+            <h1 class="form_title">
+                Create Account
+            </h1><br />
+            <form id="signup-form">
+
+
+
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="name">your name</label>
+                    <input type="text" class="left" id="name" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="skills">tell us something about your programming skills</label>
+                    <textarea name="skills" id="skills" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="college">your college</label>
+                    <input type="text" class="left" id="college" required>
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="techstack">your techstack</label>
+                    <textarea name="techstack" id="techstack" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="yearofstudy">your year of study</label>
+                    <input type="text" class="left" id="yearofstudy" required>
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="projects">list some of your recent projects along with a brief explanation of
+                        each</label>
+                    <textarea name="pojects" id="projects" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="signup-email">email Address</label>
+                    <input type="email" class="left" id="signup-email" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="content2">what are you looking for in your teammate?</label>
+                    <textarea name="content2" id="content2" class="materialize-textarea" required></textarea>
+
+                </div>
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="signup-password">choose password</label>
+                    <input type="password" class="left" id="signup-password" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="codeforces">your codeforces username</label>
+                    <input name="codeforces" id="codeforces" class="left"></input>
+
+                </div>
+
+
+
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="github link">your github profile link</label>
+                    <input type="link" class="left" id="github" required>
+
+                </div>
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="linkedin link" id="linkedin-label">your linkedin profile
+                        link</label>
+                    <input type="link" class="left" id="linkedin" required>
+
+                </div>
+                <button class="signupbutton"> sign up</button>
+                <button type="button" id="cancel-signup"
+                onclick="document.getElementById('modal-signup').style.display='none'">Cancel</button>
+
+
+              
+              
+
+
+            </form>
+        </div>
+    </div>
+    <!-- login-modal            -->
+    <div class="modal" id="modal-login">
+        <div class="hider"></div>
+        <div class="modal-login-content">
+            <h1 class="form_title">
+                login
+            </h1><br />
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required />
+                    <div><label for="login-email" class="login-labels">email Address</label></div>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required />
+                    <div> <label for="login-password" class="login-labels">your password</label></div>
+                </div>
+                <button class="btn"> login</button>
+                <button type="button" class="btn"id="cancel-login"
+                    onclick="document.getElementById('modal-login').style.display='none'">Cancel</button>
+
+            </form>
+        </div>
+    </div>
+    <!-- account-details -->
+    <div id="modal-account" class="modal">
+        <div class="hider-account"></div>
+        <div class="modal-account-content">
+
+            <h1 id="accountinfo">account-details</h1><br />
+            <div class="account-details"></div>
+            <button type="button" class="btn"id="cancel-account"
+            onclick="document.getElementById('modal-account').style.display='none'">Cancel</button>
+
+        </div>
+    </div>
+   
+    <!-- view profiles -->
+    <br>
+    <br>
+    <hr>
+
+    <h1 id="hometitle">HOME</h1>
+    <br>
+ 
+    <div class="container" style="margin-top: 40px;">
+
+
+
+
+        <ul class="collapsible" style="border: none;">
+
+        </ul>
+
+
+
+    </div>
+    <br>
+    <br>
+    <hr>
+
+
+    <!-- modal-about -->
+    <div id="modal-about">
+        <!-- <div class="hider-account"></div> -->
+        <div class="modal-about-content">
+
+            <h1 id="aboutinfo">about this website</h1><br />
+            <ul class="about">
+                <li class="purpose">
+
+                    <img src="./images/div1.png" id="purimg" alt="">
+
+                    <p class="purpose-content">
+                        <span id="purpose-heading">Our Purpose</span><br><br>
+                        The main purpose of our website <span id="highlight">'find your teammate'</span> is stated in
+                        the name itself-
+                        we help you find your dream teammate!Ask yourself an honest question how many times have you
+                        wanted
+                        to start a project but had half the skills it requires?Our website aims to solve this very
+                        problem!
+                        We allow you to pick your teammate based on their tech skills, work experience , past projects ,
+                        etc.
+                        This makes it very convenient for you to find your teammate or help them find you!
+                    </p><br><br>
+
+                </li>
+                <br>
+                <br><br>
+
+                <hr>
+                <br>
+                <li class="who">
+                    <img src="./images/div2.jpg" alt="" id="who-img">
+
+                    <span id="who">Who should use this website?</span><br><br>
+                    <p class="who">
+                        People , mostly students who are in the learning stage of their life and want to gain
+                        experience by buliding new projects and a looking for a partner to do the same can freap the
+                        benefits
+                        of this website.You can choose the right teammate based on your tech requirements by looking at
+                        the various
+                        profiles of already registered users you can then work and grow together!</p>
+                    <br><br>
+                    <br>
+                    <hr><br>
+                </li>
+                <li class="how">
+                    <img src="./images/div3.jpg" id="how-img" alt="">
+                    <span id="how">How to use this website?</span><br>
+                    <p class="how">
+                    <ul id="steps"> Using this website is vey simple and can be summarized in the following steps:<br>
+                        <li class="steps">1) On visiing the website, you are given two options: Login and Signup,
+                            if you are visiting the website for the first time and want to register as a user you should
+                            use the
+                            signup feature.</li><br>
+                        <li class="steps">2) Sign-up option:New users have to fill a mini-resume with fields like name ,
+                            tech skills, past
+                            projects,
+                            email, etc .No worries it takes only 2 minutes! and voila once you press signup you can
+                            begin your
+                            journey
+                            of looking through various profiles and find your ideal teammate.</li><br>
+                        <li class="steps">3) The login option:Already registered user should use the login option
+                            wherein they are required to
+                            fill in
+                            their email adress and password and they can then access the website and look at all the
+                            profiles!</li>
+                    </ul>
+                    </p>
+                </li>
+            </ul>
+
+            <hr>
+            <br>
+            <div id="last-line"> why wait signup now and be a part of this beautiful journey with us!</div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+<script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyB32_R8BviLgZCAuhjxmUOuJ4H2DGyQ8pc",
+        authDomain: "find-your-teammate-8a0e5.firebaseapp.com",
+        projectId: "find-your-teammate-8a0e5",
+        storageBucket: "find-your-teammate-8a0e5.appspot.com",
+        messagingSenderId: "743458507156",
+        appId: "1:743458507156:web:ca8d2c4f397fc1b3bd6781",
+        measurementId: "G-H5C14DZKCV"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    var storage = firebase.storage();
+    db.settings({ timeStampsInSnapshots: true });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./javascript/auth.js"></script>
+<script src="./javascript/index.js"></script>
+<!-- <script src="js/github.js"></script> -->
+
+
+
+</html>
+
