@@ -1,9 +1,23 @@
 
 body{
-    background:#524c4c; 
+    background:black; 
     height: 1000px;
     
 
+}
+ul{
+    list-style: none;
+}
+.cta button{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
+}
+.cta button:hover{
+    background-color:rgba(0,136,169,0.8);
 }
 .modal{
     display: none;
@@ -14,49 +28,86 @@ body{
 /* #modal-signup{
     display:none;
 } */
-.nav-wrapper-container{
+/* .nav-wrapper-container{
     display: inline-flex;
+  
 }
 li{
     list-style-type: none;
     display: inline;
+    font-family: 'Montserrat', sans-serif;
 }
 .right-hand-on-med-and-down{
 display: inline-flex;
-}
-#nav-mobile{
-    display: inline-flex;
+font-family: 'Montserrat', sans-serif;
+} */
+/* #nav-mobile{
+    display:flex;
     justify-content: flex-end;
     align-content: flex-end;
     margin-block-start: 0;
     margin-block-end: 0;
     margin-left: 298px;
+    font-family: 'Montserrat', sans-serif;
     
+    
+} */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
 }
 
 .logo{
-    display: inline-flex;
-    margin-left: 90px;
-    height: 125px;
-    width: 125px;
-    margin-top: 10px;
+  cursor:pointer;
 }
-a:-webkit-any-link{
-    display: inline-flex;
+li,a,button{
+    font-family:  'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform:uppercase;
+    font-size: 16px;
+    color: #fffafa;
+    text-decoration: none;
+}
+.right{
+    list-style: none;
+}
+.right li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.right li a{
+   transition: all 0.3s ease 0s;
+
+}
+.right li a:hover{
+    color:#0088a9;
+   
+    
+ }
+ .home-wrapper{
+   display:flexbox;
+     box-shadow:0 5px 15px 0 rgba(0,0,0,0.5);
+     
+ }
+ 
+/* a:-webkit-any-link{
+    
     text-decoration: none;
     font-size: 23px;
-    font-family: 'Roboto Slab', serif;
+    font-family:  'Montserrat', sans-serif;
     font-weight: 500;
     text-transform: capitalize;
     background-color: #948d8d;
     color: #4c4747;
   
-}
-a:-webkit-any-link:hover{
+} */
+/* a:-webkit-any-link:hover{
     background-color:#797373;
     text-decoration: underline;
-}
-.grey-text{
+} */
+/* .grey-text{
    
     height: 40px;
     width: 173px;
@@ -73,8 +124,8 @@ padding-right: 22px;
     border-radius:50px ;
     border:0px;
    
-
-}input{
+ */
+input{
     display: -webkit-inline-flex;
     width: 90%;
     align-items: center;
@@ -84,51 +135,52 @@ padding-right: 22px;
     font-family: sans-serif;
     text-align: center;
     border-radius: 12px;
-    background-color:#8f8989;
+    background-color:#ffffff;
     border: none
 }
 input:hover{
     border: none;
     outline: none;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
 }
 input:focus{
     border: none;
     outline: none;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
 }
 textarea{
-    background-color:#8f8989;
+    background-color:#ffffff;
 }
 textarea:hover{
     border: none;
     outline: none;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
 
 }
 textarea:focus{
     border: none;
     outline: none;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
 }
 #login-email{
 display: block;
+background-color: rgb(255, 255, 255);
 }
 #login-password{
     display: block;
 
 }
-h1{
+h1 {
     margin-block-start: 17px;
-    margin-block-end: 0px;
+    margin-block-end: 37px;
     align-content: center;
-    text-align: center;
+    text-align: left;
     text-shadow: #fffafa;
+    font-family:'Montserrat', sans-serif;
+   padding-left: 28px;
+    color: rgba(0,136,169,1);
+  
     
-    text-decoration: underline;
-    color: rgb(0, 0, 0);
-    text-transform: uppercase;
-    justify-content: center;
 }
 .login-form{
     display: -webkit-flex;
@@ -143,18 +195,27 @@ h1{
 }
 .btn,
 #cancelbutton{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
     align-items: center;
     justify-content: center;
-    margin-left:41px;
-    padding:5px;
-    font-family:monospace;
-    font-weight: 600;
+    margin-left:27px;
+   width: 114px;
+    font-weight: 500;
     text-transform: uppercase;
-    background-color:#918888 ;
-    border-radius: 10px;
-    width: 30%;
-    outline: none;
-    border:none;
+
+  
+  
+}
+.btn:hover{
+    background-color:rgba(0,136,169,0.8);
+}
+#cancelbutton:hover{
+    background-color:rgba(0,136,169,0.8);
 }
     
 
@@ -176,7 +237,7 @@ h1{
 
 .modal-login-content
 {
-
+background-color: #def0f0;
 position:absolute;
     top: 50%;
     left: 50%;
@@ -190,19 +251,77 @@ position:absolute;
     padding: 10px;
     border-radius: 20px;
 
-    background-color: #4a4341; 
+   
 
+}
+.form_title{
+text-align: center;
+justify-content: center;
+margin-block-end: 0;
+text-transform: capitalize;
+color: rgba(0,136,169,1);
 }
 
 
 
 
+.modal-edit-content{
+ position:absolute;
+ overflow: scroll;
+    display: flex;
+    flex-direction: column;
+     width:62em;
+    padding: 29px;
+    height:29em;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 37px;
+    box-shadow: rgb(118, 118, 118);
+    margin-top: -16em; 
+    z-index:100;
+    background-color:#def0f0; 
 
+}
+#updatebtn{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
+    width: fit-content;
+    margin-block-start: 25px;
+    margin-inline-start: 499px;
+}
+#updatebtn:hover{
+    background-color:rgba(0,136,169,0.8);
+}
+#editbtn{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
+align-content: center;
+justify-content: center;
+margin-top: 60px;
+float: inline-start;
+margin-left: 306px;
+margin-bottom: 10px;
+ }
+ #editbtn:hover{
+    background-color:rgba(0,136,169,0.8);
+ }
+ #cancel-account{
+    margin-top:24px;
+    margin-left: 307px;
+ }
 .modal-signup-content{
     position:absolute;
     display: flex;
     flex-direction: column;
-   
+   overflow: scroll;
    
     width:62em;
     padding: 29px;
@@ -211,9 +330,9 @@ position:absolute;
     margin-right: 24px;
     border-radius: 37px;
     box-shadow: rgb(118, 118, 118);
-    margin-top: -7em; 
+    margin-top: -6em; 
     z-index:100;
-    background-color: #4a4341; 
+    background-color: #def0f0; 
 }
 .signup-input-field{
     display: inline;
@@ -256,38 +375,54 @@ label{
     display: inline;
     margin-left: 0px;
     width: 248px;
+    border: none;
 }
 
 .signupbutton
 {
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
     display:inline;
     align-items: center;
     justify-content: center;
-    margin-left:299px;
-    margin-top: 64px;
-    padding:5px;
-    font-family:monospace;
-    font-weight: 600;
+    margin-left:408px;
+    margin-top: 37px;
+width:130px;
+    font-family:"Montserrat",sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
-    background-color:#918888 ;
-    border-radius: 10px;
-    width: 20%;
-    outline: none;
-    border:none;
+
+   
+ 
+
+   
+}
+.signupbutton:hover{
+    background-color:rgba(0,136,169,0.8);
 }
 .cancelsignup{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
     align-items: center;
     justify-content: center;
     margin-left:41px;
-    padding:5px;
-    font-family:monospace;
-    font-weight: 600;
+    font-family: "Montserrat",sans-serif;
+
+    font-weight: 500;
     text-transform: uppercase;
-    background-color:#918888 ;
-    border-radius: 10px;
+
     width: 20%;
-    outline: none;
-    border:none;
+}
+.cancelsignup:hover{
+    background-color:rgba(0,136,169,0.8);
 }
 #linkedin{
     display: inline;
@@ -321,7 +456,7 @@ width: 474px;
    opacity:0.9;
 }
 
-.modal-login-content
+/* .modal-login-content
 {
 
 position:absolute;
@@ -339,7 +474,7 @@ position:absolute;
 
     background-color: #4a4341; 
 
-}
+} */
 .hider-account
 {
     position:absolute;
@@ -376,7 +511,7 @@ overflow: scroll;
     border-radius: 20px;
     border: 2px solid rgb(27, 26, 26);
 
-    background-color: #4a4341; 
+    background-color: #def0f0;
 
 }
 #accountinfo{
@@ -391,6 +526,7 @@ overflow: scroll;
     font-weight: 600;
     text-align: center;
     margin-block-end: 35px;
+    margin-block-start: 20px;
 
 }
 .info-param{
@@ -404,72 +540,16 @@ overflow: scroll;
     font-size: 20px;
     font-weight: 200;
 }
-/* .wrapper{
-    display: inline-flex;
 
-}
-.wrapper .static-txt{
-    font-size: 60px;
-    font-weight: 400;
-    color: rgb(236, 245, 245);
-}
-.wrapper .dynamic-txts{
-margin-left: 15px;
-line-height: 90px;
-height: 90px;
-overflow: hidden;
-}
-.dynamic-txts{
-
-    margin-top: 0;
-}
-.dynamic-txts li{
-    list-style: none;
-    margin-top: 0;
-  top: 0;
-    font-size: 60px;
-    font-weight: 500;
-    color:rgb(36, 183, 219) ;
-    animation: slide 6s steps(4) infinite;
-}
-@keyframes slide {
-    100%{
-        top:-360px;
-
-    }
-
-}
-.thought{
-    display: block;
-}
-.dynamic-txts li span{
-    position: relative;
-}
-.dynamic-txts li span::after{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    width: 100%;
-    background:#524c4c;
-    border-left: 2px solid rgb(36, 183, 219);
-    animation: typing 1.5s steps(39) infinite;
-
-}
-@keyframes typing{
-    100%{
-        left: 100%;
-        margin: 0 -35px 0 35px;
-
-    }
-} */
 
 .center-align{
     text-align: center;
-    text-transform: uppercase;
+    color:white;
+    font-family:"Montserrat",sans-serif;
+    
     font-size: 30px;
     font-style: normal;
-    margin-top:114px;
+ 
     
 }
 
@@ -488,6 +568,15 @@ overflow: hidden;
     box-sizing: border-box;
     padding-inline-end: 50px;
 }
+.aboutdiv{
+    display: flexbox;
+    border: 2px solid grey;
+    padding: 2em;
+    padding-bottom: 3.7em;
+    margin: 1em;
+    margin-bottom: 2em;
+    box-shadow: 0px 1px 15px 5px grey inset;
+}
 
 #purimg{
     float: left;
@@ -501,7 +590,7 @@ overflow: hidden;
    float: right;
    height: 224px;
    width: 329px;
-   margin-right: 40px;
+   margin-right: 0px;
 margin-left: 0px;
    
 }
@@ -522,15 +611,20 @@ margin-left: 0px;
     float: left;
     height: 224px;
     width: 329px;
-    margin-right: 40px;
+    margin-right: 57px;
     margin-top: 10px;
  margin-left: 0px;
+ margin-bottom: 30px;
     
  }
  .how{
     display: inline;
     box-sizing: border-box;
     padding-inline-end: 50px;
+    margin-top: -10px;
+}
+#about1{
+    margin-top: -28px;
 }
 #how{
     display: inline;
@@ -557,79 +651,59 @@ margin-left: 0px;
     line-height: 1.5;
     font-weight: 600;
     margin-bottom: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
 }
 #highlight{
     text-transform: uppercase;
     font-style: italic;
     color: cornsilk;
 }
-/* .collapsible span{
-    font-size: 20px;
-    color: aliceblue;
-    display: block;
-    /* width: 84%; */
-    /* text-transform: uppercase; */
-/* } */ 
-/* .collapsible{
-    padding-inline-start: 0;
-    width: 84%;
-} */
-
-
-/* .profiletile{
-   
-    
-    display: inline-grid;
-    border: 2px solid black;
-    width: 30%;
-  
-   
-} */
-
-/* the read more button */
-/* #more{
-    display: none;
-}
-#mybtn{
-    display: block;
-    width: 25%;
-    height: 30px;
-    align-content: center;
-} */
-
 
 
 .profiletile{
     display: inline-grid;
-    
+    overflow: hidden;
     border: 2px solid #383636;
-    background-color: #6e6868;
+    background-color: #d2edf3;
     border-radius: 1.6em;
     width:44%;
     border-spacing: 10px;
     margin: 1.6em;
     padding: 18px;
-    height:2212px;
+    height: 2212px;
+    
     /* height: min-content; */
-     font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
      font-weight: 600;
      box-sizing: border-box;
+     box-shadow: 2px 2px 40px 1px #0088a9 inset;
 
     
 }
 .collapsible{
     padding-inline-start: 0;
     line-height: 1.5;
-    
+    color: black;
+  
 }
 .collapsible span{
-    color: antiquewhite;
+    color: rgba(0,136,169,0.8);
     font-weight: 700;
     text-transform: uppercase;
     display: block;
 }
+.collapsible p{
+    color:black;
+    font-weight: 900;
+}
 .collapsible div{
     width:94%;
+}
+.profiletile li{
+    color:#267588;
+font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 @media screen and (max-width:1129px){
@@ -647,16 +721,20 @@ margin-left: 0px;
 
 }
 #cancel-signup{
+    padding:9px 25px;
+    background-color:rgba(0,136,169,1);
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.3s ease 0s;
     align-items: center;
     justify-content: center;
     margin-left:154px;
-    padding:5px;
-    font-family:monospace;
-    font-weight: 600;
+   
+    font-family:"Montserrat",sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
-    background-color:#918888 ;
-    border-radius: 10px;
-    width: 20%;
-    outline: none;
-    border:none
+  
+    width: 130px;
+    
 }

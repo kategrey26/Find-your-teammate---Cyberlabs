@@ -9,6 +9,8 @@ const setupUI = (user) => {
         //account info
         db.collection('profiles').doc(user.uid).get().then(doc => {
             const html = `
+            <a href="#" id="editbtn" class="grey-text modal-trigger" data-target="modal-edit" type="button" 
+            onclick="document.getElementById('modal-edit').style.display='flex'">edit</a>
             <div id="logged-in-as">Logged in as ${user.email}</div>
             <div class="info-param">Name : <p class="infoinside">${doc.data().name}</<p></div>
             <div class="info-param">College :<p class="infoinside"> ${doc.data().college}</p></div>
@@ -20,8 +22,24 @@ const setupUI = (user) => {
             <div class="info-param">Your codeforces username :<p class="infoinside"> ${doc.data().codeforces}</p></div>
             <div class="info-param">What are you lokking for in your teammate?<p class="infoinside"> ${doc.data().content2}</p></div>
             <div class="info-param">list some of your recent projects along with a brief explanation of each : <p class="infoinside">${doc.data().projects}</p></div>
-        
+          
+     
+           
             `;
+            editProfile["0"].value=doc.data().name,
+            editProfile["1"].value=doc.data().skills,
+
+            editProfile["2"].value=doc.data().college
+            editProfile["3"].value =doc.data().techstack,
+            editProfile["4"].value =doc.data().yearofstudy,
+            editProfile["5"].value=doc.data().projects,
+           editProfile["6"].value=user.email,
+         editProfile["7"].value=doc.data().content2,
+            editProfile["8"].value=doc.data().password,
+            editProfile["9"].value=doc.data().codeforces,
+           editProfile["10"].value=doc.data().github,
+           editProfile["11"].value=doc.data().linkedin
+            
             accountDetails.innerHTML = html;
         })
 
@@ -53,7 +71,7 @@ const setupProfiles = (data) => {
 
 
             const githubUrl = profile.github;
-            const githubUserId = githubUrl.substring(githubUrl.lastIndexOf('/')+1);
+            const githubUserId = githubUrl.substring(githubUrl.lastIndexOf('/') + 1);
             const url = 'https://api.github.com/users/' + githubUserId;
 
             console.log(url);
@@ -72,6 +90,9 @@ const setupProfiles = (data) => {
                 })
                 .catch((error) => console.error("FETCH ERROR:", error));
             function displayData(data) {
+                const heading=document.createElement('p')
+                heading.innerText = `Github information:`;
+                document.getElementById(profileid).appendChild(heading);
 
                 const publicrepos = data.public_repos;
                 const list1 = document.createElement('li')
@@ -100,6 +121,7 @@ const setupProfiles = (data) => {
                     showData(data);
                 })
             function showData(data) {
+             
                 data.forEach(repo => {
                     const reponame = document.createElement('li')
                     reponame.innerText = `Name of repository : ${repo.name}`;
@@ -147,11 +169,14 @@ const setupProfiles = (data) => {
 
             function showcodeforcesData(data) {
                 data.result.forEach(result => {
+                    const heading=document.createElement('p')
+                    heading.innerText = `Codeforces information:`;
+                    document.getElementById(profileid).appendChild(heading);
                     const rank = document.createElement('li')
                     rank.innerText = `Rank on Codeforces : ${result.rank}`;
                     document.getElementById(profileid).appendChild(rank);
                     const rating = document.createElement('li')
-                   rating.innerText = `Rating on Codeforces : ${result.rating}`;
+                    rating.innerText = `Rating on Codeforces : ${result.rating}`;
                     document.getElementById(profileid).appendChild(rating);
                     // const stars = document.createElement('li')
                     // stars.innerText = `Number of stars : ${repo.stargazers_count}`;
@@ -190,7 +215,7 @@ const setupProfiles = (data) => {
    
     <div class = "collapsible"><span>list some of your recent projects along with a brief explanation of each:</span>${profile.projects}</div><br>
     <div class = "collapsible"><span>what are you looking for in your teammate?:</span>${profile.content2}</div><br>
-    </div>
+  
     <div class = "collapsible" class="links"><span>Github profile link:</span>${profile.github}</div><br>
     <div class = "collapsible" class="links"><span>Linkedin profile link:</span>${profile.linkedin}</div><br>
     <div class = "collapsible" class="links"><span>Codeforces username:</span>${profile.codeforces}</div><br>
@@ -204,7 +229,7 @@ const setupProfiles = (data) => {
 
         profilesList.innerHTML = html;
     } else {
-        profilesList.innerHTML = '<h5 class="center-align">Login to view user profiles</h5>'
+        profilesList.innerHTML = '<h5 class="center-align" style.color="rgba(0,136,169,1)">Login to view user profiles</h5>'
     }
 
 }
@@ -219,3 +244,33 @@ document.addEventListener('DOMContentLoaded', function () {
     M.Collapsible.init(items);
 });
 
+
+
+
+
+
+
+
+
+function updateUserProfile(e) {
+    e.preventDefault()
+    const userdocref = db.collection('profiles').doc(firebase.auth().currentUser.uid);
+    userdocref.update({
+        name: editProfile["0"].value,
+        skills: editProfile["1"].value,
+        college: editProfile["2"].value,
+        techstack: editProfile["3"].value,
+        yearofstudy: editProfile["4"].value,
+        projects: editProfile["5"].value,
+        email: editProfile["6"].value,
+        content2: editProfile["7"].value,
+        password: editProfile["8"].value,
+        codeforces: editProfile["9"].value,
+        github: editProfile["10"].value,
+        linkedin: editProfile["11"].value
+
+    })
+    const modal = document.querySelector('#modal-edit');
+    M.Modal.getInstance(modal).close();
+    editProfile.reset();
+}

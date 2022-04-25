@@ -17,17 +17,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300&family=Roboto+Slab:wght@200;300;400&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper-container">
-            <a href="#" class="brand-logo">
-                <div class="logo">
-                    <img src="./images/logo.png" alt="logo">
-            </a>
-        </div>
+    <header>
+    
+      
+           <img class="logo" src="images\Frame 22white logo.png" alt="">
+   
+        <nav>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="logged-in" style="display: none;">
                 <a href="#" class="grey-text modal-trigger" data-target="modal-account" type="button"
@@ -49,9 +51,12 @@
                 onclick="document.getElementById('modal-signup').style.display='flex'" >signup</a>
             </li>
 
+
         </ul>
-        </div>
+      
     </nav>
+    <a class="cta" href="#"><button>contact</button></a>
+</header>
     <!-- signup modal -->
     <div class="modal" id="modal-signup">
         <div class="hider"></div>
@@ -133,8 +138,8 @@
 
                 </div>
                 <button class="signupbutton"> sign up</button>
-                <button type="button" id="cancel-signup"
-                onclick="document.getElementById('modal-signup').style.display='none'">Cancel</button>
+                <button type="button" id="cancel-signup"value ="Reload Page" onclick="window.location.reload(true)">cancel</button>
+                <!-- onclick="document.getElementById('modal-signup').style.display='none'">Cancel</button> -->
 
 
               
@@ -161,8 +166,8 @@
                     <div> <label for="login-password" class="login-labels">your password</label></div>
                 </div>
                 <button class="btn"> login</button>
-                <button type="button" class="btn"id="cancel-login"
-                    onclick="document.getElementById('modal-login').style.display='none'">Cancel</button>
+                <button type="button" class="btn"id="cancel-login" value ="Reload Page" onclick="window.location.reload(true)">cancel</button>
+                    <!-- onclick="document.getElementById('modal-login').style.display='none'">Cancel</button> -->
 
             </form>
         </div>
@@ -174,19 +179,19 @@
 
             <h1 id="accountinfo">account-details</h1><br />
             <div class="account-details"></div>
-            <button type="button" class="btn"id="cancel-account"
-            onclick="document.getElementById('modal-account').style.display='none'">Cancel</button>
+            <button type="button" class="btn"id="cancel-account" value ="Reload Page" onclick="window.location.reload(true)"> cancel</button>
+            <!-- onclick="document.getElementById('modal-account').style.display='none'" -->
+            
 
         </div>
     </div>
    
     <!-- view profiles -->
-    <br>
-    <br>
-    <hr>
+   
+    <div class="home-wrapper">
 
-    <h1 id="hometitle">HOME</h1>
-    <br>
+    <h1 id="hometitle">Home</h1>
+    
  
     <div class="container" style="margin-top: 40px;">
 
@@ -200,9 +205,9 @@
 
 
     </div>
-    <br>
-    <br>
-    <hr>
+</div>
+   
+  
 
 
     <!-- modal-about -->
@@ -210,10 +215,10 @@
         <!-- <div class="hider-account"></div> -->
         <div class="modal-about-content">
 
-            <h1 id="aboutinfo">about this website</h1><br />
+            <h1 id="aboutinfo">About this website...</h1><br />
             <ul class="about">
                 <li class="purpose">
-
+                    <div class="aboutdiv" id="about1">
                     <img src="./images/div1.png" id="purimg" alt="">
 
                     <p class="purpose-content">
@@ -227,15 +232,13 @@
                         We allow you to pick your teammate based on their tech skills, work experience , past projects ,
                         etc.
                         This makes it very convenient for you to find your teammate or help them find you!
-                    </p><br><br>
+                    </p>
+                    </div>
 
                 </li>
-                <br>
-                <br><br>
-
-                <hr>
-                <br>
+                
                 <li class="who">
+                    <div class="aboutdiv" id="about2">
                     <img src="./images/div2.jpg" alt="" id="who-img">
 
                     <span id="who">Who should use this website?</span><br><br>
@@ -246,11 +249,11 @@
                         of this website.You can choose the right teammate based on your tech requirements by looking at
                         the various
                         profiles of already registered users you can then work and grow together!</p>
-                    <br><br>
-                    <br>
-                    <hr><br>
+                   
+                    </div>
                 </li>
                 <li class="how">
+                    <div class="aboutdiv" id="about1">
                     <img src="./images/div3.jpg" id="how-img" alt="">
                     <span id="how">How to use this website?</span><br>
                     <p class="how">
@@ -270,14 +273,16 @@
                             wherein they are required to
                             fill in
                             their email adress and password and they can then access the website and look at all the
-                            profiles!</li>
+                            profiles!
+                     </li>
                     </ul>
                     </p>
+                    </div>
                 </li>
             </ul>
 
-            <hr>
-            <br>
+          
+        
             <div id="last-line"> why wait signup now and be a part of this beautiful journey with us!</div>
 
 
@@ -294,10 +299,99 @@
 
 
 
+<!-- edit profile -->
+
+
+    <div class="modal" id="modal-edit">
+        <div class="hider"></div>
+        <div class="modal-edit-content">
+            <h1 class="form_title">
+              Edit Account
+            </h1><br />
+            <form id="edit-form" autocomplete="off" onsubmit="updateUserProfile(event)">
 
 
 
 
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="name">your name</label>
+                    <input type="text" name="edit-name" class="left" id="name" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="skills">tell us something about your programming skills</label>
+                    <textarea name="edit-skills" id="skills" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="college">your college</label>
+                    <input type="text" name="edit-college" class="left" id="college" required>
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="techstack">your techstack</label>
+                    <textarea name="edit-techstack" id="techstack" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="yearofstudy">your year of study</label>
+                    <input type="text" name="edit-yearofstudy" class="left" id="yearofstudy" required>
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="projects">list some of your recent projects along with a brief explanation of
+                        each</label>
+                    <textarea name="edit-pojects" id="projects" class="materialize-textarea" required></textarea>
+
+                </div>
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="signup-email">email Address</label>
+                    <input type="email" name="edit-email" class="left" id="signup-email" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="content2">what are you looking for in your teammate?</label>
+                    <textarea name="edit-content2" id="content2" class="materialize-textarea" required></textarea>
+
+                </div>
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="signup-password">choose password</label>
+                    <input type="password" class="left" id="signup-password" required />
+
+                </div>
+                <div class="signup-input-field" class="right-side">
+                    <label for="codeforces">your codeforces username</label>
+                    <input name="edit-codeforces" id="codeforces" class="left"></input>
+
+                </div>
+
+
+
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="github link">your github profile link</label>
+                    <input type="link" name="edit-github" class="left" id="github" required>
+
+                </div>
+
+                <div class="signup-input-field" class="left-side">
+                    <label class="left-labels" for="linkedin link" id="linkedin-label">your linkedin profile
+                        link</label>
+                    <input type="link" name="edit-linkedin" class="left" id="linkedin" required>
+
+                </div>
+                <button class="cta" id="updatebtn"> update details</button>
+                
+
+
+              
+              
+
+
+            </form>
+        </div>
+    </div>
 
 
 
