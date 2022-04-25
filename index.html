@@ -55,13 +55,28 @@
         </ul>
       
     </nav>
-    <a class="cta" href="#"><button>contact</button></a>
+    <a class="cta" href="#"  class="grey-text modal-trigger" data-target="modal-contact" type="button"
+    onclick="document.getElementById('modal-contact').style.display='flex'" ><button id="contact-btn">contact</button></a>
 </header>
+<!-- contact info -->
+<div class="modal" id="modal-contact">
+    <div class="hider"></div>
+    <div class="modal-contact-content">
+        <h1 class="form_title" id="contact_heading">
+           Contact us
+        </h1><br />
+      
+<p id="contact">Email your queries at:
+    <a href="#" id="query_mail">mishra.pratiksha1002@gmail.com</span></p>
+        <button type="button" class="btn" id="cancel-contact"value ="Reload Page" onclick="window.location.reload(true)">cancel</button>
+    </div>
+</div>
+
     <!-- signup modal -->
     <div class="modal" id="modal-signup">
         <div class="hider"></div>
         <div class="modal-signup-content">
-            <h1 class="form_title">
+            <h1 class="form_title" id="create_heading">
                 Create Account
             </h1><br />
             <form id="signup-form">
@@ -168,10 +183,33 @@
                 <button class="btn"> login</button>
                 <button type="button" class="btn"id="cancel-login" value ="Reload Page" onclick="window.location.reload(true)">cancel</button>
                     <!-- onclick="document.getElementById('modal-login').style.display='none'">Cancel</button> -->
+                    <a href="#" id="forgot-link" class="grey-text modal-trigger" data-target="modal-forgot" type="button"
+                    onclick="document.getElementById('modal-forgot').style.display='flex'">forgot password?</a>
+            </form>
+        </div>
+    </div>
+    <!-- forgot password -->
+    <div class="modal" id="modal-forgot">
+        <div class="hider"></div>
+        <div class="modal-forgot-content" >
+            <h1  id="forgot-heading">
+               Forgot password
+            </h1><br />
+            <form id="forgot-form">
+                <p>Please enter your email address below and we will send you the link to reset your password:</p>
+                <div class="input-field">
+                    <input type="email" id="reset-email" required />
+                    <div><label for="login-email" class="login-labels">email Address</label></div>
+                </div>
+              
+                <button class="btn" id="btnresetpassword" type="button">send reset link</button>
+                <button type="button" class="btn"id="cancel-forgot" value ="Reload Page" onclick="window.location.reload(true)">cancel</button>
+                    <!-- onclick="document.getElementById('modal-login').style.display='none'">Cancel</button> -->
 
             </form>
         </div>
     </div>
+
     <!-- account-details -->
     <div id="modal-account" class="modal">
         <div class="hider-account"></div>
@@ -308,7 +346,7 @@
             <h1 class="form_title">
               Edit Account
             </h1><br />
-            <form id="edit-form" autocomplete="off" onsubmit="updateUserProfile(event)">
+            <form id="edit-form" autocomplete="off" onsubmit="updateUserProfile(event)" >
 
 
 
@@ -381,7 +419,8 @@
                     <input type="link" name="edit-linkedin" class="left" id="linkedin" required>
 
                 </div>
-                <button class="cta" id="updatebtn"> update details</button>
+                <button class="cta" id="updatebtn" > update details</button>
+
                 
 
 
@@ -434,7 +473,7 @@
     var storage = firebase.storage();
     db.settings({ timeStampsInSnapshots: true });
 </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="./javascript/auth.js"></script>
 <script src="./javascript/index.js"></script>

@@ -173,21 +173,25 @@ background-color: rgb(255, 255, 255);
 h1 {
     margin-block-start: 17px;
     margin-block-end: 37px;
+    margin-inline-start: 20px;
     align-content: center;
     text-align: left;
     text-shadow: #fffafa;
     font-family:'Montserrat', sans-serif;
-   padding-left: 28px;
+   /* padding-left: 28px; */
     color: rgba(0,136,169,1);
-  
-    
+   width: max-content;
+    border-bottom: 5px solid white;
+    text-shadow: 2px 2px #2a3c41;
+       
 }
 .login-form{
     display: -webkit-flex;
 }
 .login-labels{
     display: block;
- 
+ color: #0088a9;
+ font-size: 20px;
     text-transform: capitalize;
     margin-block-start: 10px;
     margin-block-end: 10px;
@@ -239,10 +243,11 @@ h1 {
 {
 background-color: #def0f0;
 position:absolute;
+
     top: 50%;
     left: 50%;
     width:16em;
-    height:16em;
+    height:17em;
     margin-top: -1em; 
     margin-left: -7em; 
     border: 1px solid #ccc;
@@ -258,10 +263,19 @@ position:absolute;
 text-align: center;
 justify-content: center;
 margin-block-end: 0;
+margin-inline-start: 103px;
 text-transform: capitalize;
 color: rgba(0,136,169,1);
 }
+#create_heading{
+    text-align: center;
+justify-content: center;
+margin-block-end: 0;
+margin-inline-start: 462px;
+text-transform: capitalize;
+color: rgba(0,136,169,1);
 
+}
 
 
 
@@ -362,6 +376,8 @@ label{
     margin-block-start: 31px;
     margin-block-end: 5px;
     margin-left: 0px;
+    color: black;
+    font-size: 18px;
 }
 .left-labels{
     display: inline-block;
@@ -517,6 +533,7 @@ overflow: scroll;
 #accountinfo{
     margin-block-start: 1px;
     margin-block-end: 0px;
+    margin-inline-start: 167px;
     text-align: center;
     text-transform: uppercase;
 
@@ -737,4 +754,84 @@ font-family: Arial, Helvetica, sans-serif;
   
     width: 130px;
     
+}
+#forgot-link{
+text-align: center;
+display: block;
+margin-block-start: 20px;
+color: #08252c;
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 600;
+}
+#forgot-link:hover{
+    color: #021115;
+    text-decoration: underline;
+
+}
+.modal-forgot-content{
+    background-color: #def0f0;
+position:absolute;
+
+    top: 50%;
+    left: 50%;
+    width:16em;
+    height:20em;
+    margin-top: -4em; 
+    margin-left: -7em; 
+    border: 1px solid #ccc;
+    border:  2px solid black;
+    z-index:100; 
+    padding: 10px;
+    border-radius: 20px;
+}
+#forgot-heading{
+    margin: auto;
+    margin-block-start: 20px;
+    text-align: center;
+    font-size: large;
+    text-shadow: none;
+}
+#btnresetpassword{
+    width: max-content;
+    margin-block-start: 20px;
+    margin-inline-start: 64px;
+}
+#cancel-forgot{
+    margin-block-start: 20px;
+    margin-inline-start: 105px;
+
+}
+p{
+    padding: 5px;
+}
+#contact_heading{
+display: block;
+text-align: center;
+margin-left: px;
+}
+.modal-contact-content{
+    background-color: #def0f0;
+position:absolute;
+
+    top: 50%;
+    left: 50%;
+    width:22em;
+    height:13em;
+    margin-top: -9em; 
+    margin-left: -10em; 
+    border: 1px solid #ccc;
+    border:  2px solid black;
+    z-index:100; 
+    padding: 10px;
+    border-radius: 20px;
+}
+#query_mail{
+    color: #0088a9;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+#cancel-contact{
+    margin-block-start: 20px;
+    margin-inline-start: 163px;
 }

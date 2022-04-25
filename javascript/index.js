@@ -212,14 +212,14 @@ const setupProfiles = (data) => {
     <div class="collapsible" id="techinfo">
     <div class = "collapsible"><span>Skills:</span>${profile.skills}</div><br>
     <div class = "collapsible"><span>Technological stack:</span>${profile.techstack}</div><br>
-   
+
     <div class = "collapsible"><span>list some of your recent projects along with a brief explanation of each:</span>${profile.projects}</div><br>
     <div class = "collapsible"><span>what are you looking for in your teammate?:</span>${profile.content2}</div><br>
   
     <div class = "collapsible" class="links"><span>Github profile link:</span>${profile.github}</div><br>
     <div class = "collapsible" class="links"><span>Linkedin profile link:</span>${profile.linkedin}</div><br>
     <div class = "collapsible" class="links"><span>Codeforces username:</span>${profile.codeforces}</div><br>
-
+    
    </li>
    
     `;
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+//edit account details
 
 function updateUserProfile(e) {
     e.preventDefault()
@@ -273,4 +273,27 @@ function updateUserProfile(e) {
     const modal = document.querySelector('#modal-edit');
     M.Modal.getInstance(modal).close();
     editProfile.reset();
+
 }
+
+
+
+
+
+
+
+$("#btnresetpassword").click(function(){
+var auth= firebase.auth();
+var email=$("#reset-email").val();
+if (email != ""){
+auth.sendPasswordResetEmail(email).then(function(){
+window.alert("An alert has been sent to you please check and verify.")
+})
+.catch(function(error){
+    throw new Error("NETWORK RESPONSE ERROR");
+});
+} else{
+    window.alert("Please enter your email address")
+}
+
+});
